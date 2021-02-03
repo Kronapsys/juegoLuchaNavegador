@@ -12,53 +12,54 @@
     <link href="css/style.css" rel="stylesheet" />
   </head>
   <body>
-    <section>
+    
+      <div class="general">
         <div class="pantallaSeleccionPersonaje">
             <div class="playerStatus"><p>PLAYER 1 SELECT YOUR FIGHTER</p></div>
             <div class="caja1"></div>
             <div class="personajesJugables">
                 <div class="fila fila1">
-                    <div class="marco marco1"></div>
-                    <div class="marco marco2"></div>
-                    <div class="marco marco3"></div>
-                    <div class="marco marco4"></div>
-                    <div class="marco marco5"></div>
-                    <div class="marco marco6"></div>
-                    <div class="marco marco7"></div>
-                    <div class="marco marco8"></div>
+                    <div class="marco marco0" onclick="selectFighter('Anna')" id="Anna"><img class="avatar" src="img/retratos/anna_ret.PNG"></div>
+                    <div class="marco marco1" onclick="selectFighter('Bryan')" id="Bryan"><img class="avatar" src="img/retratos/bryan_ret.PNG"></div>
+                    <div class="marco marco2" onclick="selectFighter('Eddy')" id="Eddy"><img class="avatar" src="img/retratos/eddy_ret.PNG"></div>
+                    <div class="marco marco3" onclick="selectFighter('Heihachi')" id="Heihachi"><img class="avatar" src="img/retratos/heihachi_ret.PNG"></div>
+                    <div class="marco marco4" onclick="selectFighter('Hwoarang')" id="Hwoarang"><img class="avatar" src="img/retratos/hwoarang_ret.PNG"></div>
+                    <div class="marco marco5" onclick="selectFighter('Jack')" id="Jack"><img class="avatar" src="img/retratos/jack_ret.PNG"></div>
+                    <div class="marco marco6" onclick="selectFighter('Jin')" id="Jin"><img class="avatar" src="img/retratos/jin_ret.PNG"></div>
+                    <div class="marco marco7" onclick="selectFighter('Julia')" id="Julia"><img class="avatar" src="img/retratos/julia_ret.PNG"></div>
                 </div>
                 <div class="fila fila2">
-                    <div class="marco marco9"></div>
-                    <div class="marco marco10"></div>
-                    <div class="marco marco11"></div>
-                    <div class="marco marco12"></div>
-                    <div class="marco marco13"></div>
-                    <div class="marco marco14"></div>
-                    <div class="marco marco15"></div>
+                    <div class="marco marco8" onclick="selectFighter('King')" id="King"><img class="avatar" src="img/retratos/king_ret.PNG"></div>
+                    <div class="marco marco9" onclick="selectFighter('Kuma')" id="Kuma"><img class="avatar" src="img/retratos/kuma_ret.PNG"></div>
+                    <div class="marco marco10" onclick="selectFighter('Law')" id="Law"><img class="avatar" src="img/retratos/law_ret.PNG"></div>
+                    <div class="marco marco11" onclick="selectFighter('Lei')" id="Lei"><img class="avatar" src="img/retratos/lei_ret.PNG"></div>
+                    <div class="marco marco12" onclick="selectFighter('Mokujin')" id="Mokujin"><img class="avatar" src="img/retratos/mokujin_ret.PNG"></div>
+                    <div class="marco marco13" onclick="selectFighter('Nina')" id="Nina"><img class="avatar" src="img/retratos/nina_ret.PNG"></div>
+                    <div class="marco marco14" onclick="selectFighter('Ogre')" id="Ogre"><img class="avatar" src="img/retratos/ogre_ret.PNG"></div>
                 </div>
                 <div class="fila fila3">
-                    <div class="marco marco16"></div>
-                    <div class="marco marco17"></div>
-                    <div class="marco marco18"></div>
-                    <div class="marco marco19"></div>
+                    <div class="marco marco15" onclick="selectFighter('Panda')" id="Panda"><img class="avatar" src="img/retratos/panda_ret.PNG"></div>
+                    <div class="marco marco16" onclick="selectFighter('Paul')" id="Paul"><img class="avatar" src="img/retratos/paul_ret.PNG"></div>
+                    <div class="marco marco17" onclick="selectFighter('Xiaoyu')" id="Xiaoyu"><img class="avatar" src="img/retratos/xiaoyu_ret.PNG"></div>
+                    <div class="marco marco18" onclick="selectFighter('Yoshimitsu')" id="Yoshimitsu"><img class="avatar" src="img/retratos/yoshimitsu_ret.PNG"></div>
                 </div>
             </div>
             <div class="fighterSelP1">
-              <div class="statsFighterP1 a">
-                  <div class="nacionalidad a"></div>
-                  <div class="hp stats a"><p>HP:</p></div>
-                  <div class="str stats a"><p>STR:</p></div>
-                  <div class="def stats a"><p>DEF:</p></div>
-                  <div class="luck stats a"><p>LUCK:</p></div>
+              <div class="statsFighterP1">
+                  <div class="nacionalidad"></div>
+                  <div class="hp stats"><p>HP:</p></div>
+                  <div class="str stats"><p>STR:</p></div>
+                  <div class="def stats"><p>DEF:</p></div>
+                  <div class="luck stats"><p>LUCK:</p></div>
               </div>
             </div>
             <div class="fighterSelP2">
-              <div class="statsFighterP2 a">
-                <div class="nacionalidad a"></div>
-                <div class="hp stats a"><p>HP:</p></div>
-                <div class="str stats a"><p>STR:</p></div>
-                <div class="def stats a"><p>DEF:</p></div>
-                <div class="luck stats a"><p>LUCK:</p></div>
+              <div class="statsFighterP2">
+                <div class="nacionalidad"></div>
+                <div class="hp stats"><p>HP:</p></div>
+                <div class="str stats"><p>STR:</p></div>
+                <div class="def stats"><p>DEF:</p></div>
+                <div class="luck stats"><p>LUCK:</p></div>
               </div>
             </div>
             <div class="fighter1name"></div>
@@ -91,7 +92,8 @@
             
             <div class="btnFight"> <p>FIGHT !</p></div>
         </div>
-    </section>
+      </div>
+    
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
