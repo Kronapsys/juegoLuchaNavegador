@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Play:wght@700&display=swap');
+
 .a{
     border: solid 0.1em red;
 }
@@ -78,31 +80,30 @@ body{
 }
 
 .statsFighterP1{
-    height: 10em;
-    width: 7em;
+    height: 12em;
+    width: 10em;
     margin-top: 16em;
     margin-left: 16em;
     display: flex;
     flex-direction: column;
+    color: white;
+    font-family: 'Play', sans-serif;
+    
 }
 
 .nacionalidad{
     height: 2em;
     width: 3em;
-    margin-left: 4em;
-    background-image: url(../img/banderas);
+    background-image: url(../img/banderas/);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.nombre{
-    height: 1em;
-    width: 3em;
-    font-family: 'Permanent Marker', cursive;
-    color: blanchedalmond;
-    font-size: 0.8em;
-
+.stats{
+    height: 2em;
+    width: 5em;
+    
 }
 
 .fighterSelP2{
@@ -118,12 +119,14 @@ body{
 }
 
 .statsFighterP2{
-    height: 10em;
-    width: 7em;
-    margin-top: 16.2em;
-    margin-left: -8.2em;
+    height: 12em;
+    width: 10em;
+    margin-top: 16em;
+    margin-left: -12em;
     display: flex;
     flex-direction: column;
+    color: white;
+    font-family: 'Play', sans-serif;
 }
 
 .fighter1name{
@@ -198,6 +201,7 @@ body{
     height: 3.5em;
     width: 8em;
     margin-left: 37em;
+    margin-top: -4em;
     font-family: 'Permanent Marker', cursive;
     color: blanchedalmond;
     text-align: center;
