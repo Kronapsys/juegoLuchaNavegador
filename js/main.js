@@ -40,3 +40,13 @@ let allFighter = ["Anna", "Bryan", "Eddy", "Heihachi", "Hwoarang", "Jack", "Jin"
 
 let p1 = "";
 let p2 = "";
+
+
+// FUNCIONES
+
+let marco0 = document.getElementById("Anna");
+marco0.addEventListener("hover", RellenarStats(fighter0));
+
+let RellenarStats = (fighter) => {
+    getElementById(fighterSelP1) = 
+}

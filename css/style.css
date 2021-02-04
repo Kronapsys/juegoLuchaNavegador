@@ -217,3 +217,7 @@ body{
     border: solid 0.2em orange;
 }
 
+/* Haciendo hover en div1 aparece div2 
+.marco0:hover + .fighterSelP1, .statsFighterP1 {
+    display: block;
+} */
