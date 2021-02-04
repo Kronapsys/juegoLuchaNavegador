@@ -65,12 +65,31 @@ body{
     border: solid 0.2em orange;
 }
 
+.marcoSel{
+    height: 4em;
+    width: 4em;
+    margin-left: 0.1em;
+    border: solid 0.2em orange;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
 .avatar{
     height: 4em;
     width: 4em;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.avatarSel{
+    height: 4em;
+    width: 4em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 
 .fighterSelP1{
