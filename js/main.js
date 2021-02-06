@@ -100,11 +100,11 @@ let RellenarStats = (fighter) => {
 };
 
 ataque = (enemigo) => {
-  enemigo.hp -= this.str - (enemigo.def / 100 + enemigo.def);
+  enemigo.hp -= this.str - ((enemigo.def / (100 + enemigo.def))*100);
 };
 
 critico = (enemigo) => {
-  enemigo.hp -= (this.str - (enemigo.def / 100 + enemigo.def)) * 2;
+    enemigo.hp -= (this.str - ((enemigo.def / (100 + enemigo.def))*100)) * 2;
 };
 
 let startGame = () => {
