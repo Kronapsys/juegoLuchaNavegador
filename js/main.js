@@ -68,17 +68,39 @@ let allplayers = {
 // FUNCIONES
 
 let RellenarStats = (fighter) => {
-    document.getElementsByClassName("fighterSelP1").innerHTML = ` <div><img src="img/personajes/${fighter.nombre}.png"></img></div> `;
-    document.getElementsByClassName("nacionalidad").innerHTML = ` <div><img src="img/banderas/${fighter.nacionalidad}.png"></img></div> `;
-    document.getElementsByClassName("fighter1name").innerHTML = ` <p>${fighter.nombre}</p> `;
+    console.log(fighter);
+    document.getElementById("fighterSelP1").innerHTML = ` <img class="fighterFocus" src="img/personajes/${fighter.nombre}.png"></img> `;
+    document.getElementById("nacionalidad").innerHTML = ` <img src="img/banderas/${fighter.nacionalidad}.png"></img> `;
+    document.getElementById("fighter1name").innerHTML = ` <p>${fighter.nombre}</p> `;
     document.getElementById("hp").innerHTML = ` <p>HP: ${fighter.hp}</p> `;
     document.getElementById("str").innerHTML = ` <p>STR: ${fighter.str}</p> `;
     document.getElementById("def").innerHTML = ` <p>DEF: ${fighter.def}</p> `;
     document.getElementById("luck").innerHTML = ` <p>LUCK: ${fighter.suerte}</p> `;
  }
 
-let marco0 = document.getElementById("Anna");
-marco0.addEventListener("mouseover", RellenarStats(fighter0));
+/* let pintaInfo = document.getElementById("Anna");
+pintaInfo.addEventListener("mouseover", RellenarStats(fighter0));
+
+let pintaInfo = document.getElementById("Bryan");
+pintaInfo.addEventListener("mouseover", RellenarStats(fighter0)); */
+
+ataque = (enemigo) => {
+    enemigo.hp -= (this.str - (enemigo.def/100 + enemigo.def));
+}
+
+let startGame = () =>{
+    p1 = "";
+    p2= "";
+}
+
+let cambiaPantalla = (faseAhora, faseFutura) => {
+    let pantallaActual = document.getElementById(faseAhora);
+    let pantallaDestino = document.getElementById(faseFutura);
+
+    pantallaActual.style.display = "none";
+    pantallaDestino.style.display = "block";
+}
+
 
 let selectFighter = (personaje) => {
     if(p1 == ""){
@@ -94,4 +116,3 @@ let selectFighter = (personaje) => {
         document.getElementById(personaje).onclick = "";
     }
 }
-

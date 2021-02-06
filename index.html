@@ -15,12 +15,12 @@
     
       <div class="general">
         <div class="pantallaSeleccionPersonaje">
-            <div class="playerStatus"><p>PLAYER 1 SELECT YOUR FIGHTER</p></div>
+            <div class="playerStatus"><p> SELECT YOUR FIGHTER</p></div>
             <div class="caja1"></div>
             <div class="personajesJugables">
                 <div class="fila fila1">
-                    <div class="marco marco0" onclick="selectFighter('Anna')" onmouseover="RellenarStats('fighter')" id="Anna"><img class="avatar" src="img/retratos/anna_ret.PNG"></div>
-                    <div class="marco marco1" onclick="selectFighter('Bryan')" id="Bryan"><img class="avatar" src="img/retratos/bryan_ret.PNG"></div>
+                    <div class="marco marco0" onclick="selectFighter('Anna')" onmouseenter="RellenarStats(fighter0)" id="Anna"><img class="avatar" src="img/retratos/anna_ret.PNG"></div>
+                    <div class="marco marco1" onclick="selectFighter('Bryan')" onmouseenter="RellenarStats(fighter1)" id="Bryan"><img class="avatar" src="img/retratos/bryan_ret.PNG"></div>
                     <div class="marco marco2" onclick="selectFighter('Eddy')" id="Eddy"><img class="avatar" src="img/retratos/eddy_ret.PNG"></div>
                     <div class="marco marco3" onclick="selectFighter('Heihachi')" id="Heihachi"><img class="avatar" src="img/retratos/heihachi_ret.PNG"></div>
                     <div class="marco marco4" onclick="selectFighter('Hwoarang')" id="Hwoarang"><img class="avatar" src="img/retratos/hwoarang_ret.PNG"></div>
@@ -44,9 +44,9 @@
                     <div class="marco marco18" onclick="selectFighter('Yoshimitsu')" id="Yoshimitsu"><img class="avatar" src="img/retratos/yoshimitsu_ret.PNG"></div>
                 </div>
             </div>
-            <div class="fighterSelP1">
+            <div class="fighterSelP1" id="fighterSelP1">
               <div class="statsFighterP1">
-                  <div class="nacionalidad"></div>
+                  <div class="nacionalidad" id="nacionalidad"></div>
                   <div class="hp stats" id="hp"><p>HP: </p></div>
                   <div class="str stats" id="str"><p>STR: </p></div>
                   <div class="def stats" id="def"><p>DEF: </p></div>
@@ -55,14 +55,14 @@
             </div>
             <div class="fighterSelP2">
               <div class="statsFighterP2">
-                <div class="nacionalidad"></div>
+                <div class="nacionalidad" id="nacionalidad"></div>
                 <div class="hp stats"><p>HP:</p></div>
                 <div class="str stats"><p>STR:</p></div>
                 <div class="def stats"><p>DEF:</p></div>
                 <div class="luck stats"><p>LUCK:</p></div>
               </div>
             </div>
-            <div class="fighter1name"><p></p></div>
+            <div class="fighter1name" id="fighter1name"><p></p></div>
             <div class="fighter2name"><p></p></div>          
             <div class="btnFight"> <p>FIGHT !</p></div>
         </div>
