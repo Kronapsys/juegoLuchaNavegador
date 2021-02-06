@@ -5,9 +5,11 @@
     border: solid 0.1em red;
 }
 
-/*body{
-    overflow: hidden;
-} */
+body{
+    margin: 0;
+    padding: 0;
+} 
+
 
 .pantallaSeleccionPersonaje{
     height: 100vh;
@@ -98,20 +100,6 @@
     margin-left: 3em;
     margin-top: -15em;
     border: solid 0.4em blue;
-    /*background-image: url(../img/personajes); */
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-}
-
-#fighterSelP1{
-    width: 15em;
-    height: 30em;
-    margin-left: 3em;
-    margin-top: -15em;
-    border: solid 0.4em blue;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -121,8 +109,12 @@
 
 .fighterFocus{
     width: 15em;
-    height: 10em;
-    z-index: 1;
+    height: 30em;
+}
+
+.nacionalidadFocus{
+    width: 3em;
+    height: 3em;
 }
 
 .statsFighterP1{
@@ -135,6 +127,7 @@
     color: white;
     font-family: 'Play', sans-serif;
     z-index: 2;
+    position: fixed;
     
 }
 

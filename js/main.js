@@ -1,18 +1,14 @@
 // CLASES
-class Fighter{
-    
-    constructor(nombre, nacionalidad, hp, str, def, suerte){
-        this.nombre = nombre;
-        this.nacionalidad = nacionalidad;
-        this.hp = hp;
-        this.str = str;
-        this.def = def;
-        this.suerte = suerte;
-    };
+class Fighter {
+  constructor(nombre, nacionalidad, hp, str, def, suerte) {
+    this.nombre = nombre;
+    this.nacionalidad = nacionalidad;
+    this.hp = hp;
+    this.str = str;
+    this.def = def;
+    this.suerte = suerte;
+  }
 }
-
-
-
 
 // INSTANCIAS Y VARIABLES GLOBALES
 let fighter0 = new Fighter("Anna", "Irlanda", 600, 50, 45, 2);
@@ -35,84 +31,117 @@ let fighter16 = new Fighter("Paul", "EEUU", 700, 80, 50, 3);
 let fighter17 = new Fighter("Xiaoyu", "China", 550, 60, 60, 2);
 let fighter18 = new Fighter("Yoshimitsu", "Desconocido", 900, 40, 25, 8);
 
-let allFighter = ["Anna", "Bryan", "Eddy", "Heihachi", "Hwoarang", "Jack", "Jin", "Julia", "King", "Kuma", 
-                    "Law", "Lei", "Mokujin", "Nina", "Ogre", "Panda", "Paul", "Xiaoyu", "Yoshimitsu"];
+let allFighter = [
+  "Anna",
+  "Bryan",
+  "Eddy",
+  "Heihachi",
+  "Hwoarang",
+  "Jack",
+  "Jin",
+  "Julia",
+  "King",
+  "Kuma",
+  "Law",
+  "Lei",
+  "Mokujin",
+  "Nina",
+  "Ogre",
+  "Panda",
+  "Paul",
+  "Xiaoyu",
+  "Yoshimitsu",
+];
 
 let p1 = "";
 let p2 = "";
 
 // TRADUCTOR
 let allplayers = {
-    "Anna": fighter0,
-    "Bryan": fighter1,
-    "Eddy": fighter2,
-    "Heihachi": fighter3,
-    "Hwoarang": fighter4,
-    "Jack": fighter5,
-    "Jin": fighter6,
-    "Julia": fighter7,
-    "King": fighter8,
-    "Kuma": fighter9,
-    "Law": fighter10,
-    "Lei": fighter11,
-    "Mokujin": fighter12,
-    "Nina": fighter13,
-    "Ogre": fighter14,
-    "Panda": fighter15,
-    "Paul": fighter16,
-    "Xiaoyu": fighter17,
-    "Yoshimitsu": fighter18,
-
+  Anna: fighter0,
+  Bryan: fighter1,
+  Eddy: fighter2,
+  Heihachi: fighter3,
+  Hwoarang: fighter4,
+  Jack: fighter5,
+  Jin: fighter6,
+  Julia: fighter7,
+  King: fighter8,
+  Kuma: fighter9,
+  Law: fighter10,
+  Lei: fighter11,
+  Mokujin: fighter12,
+  Nina: fighter13,
+  Ogre: fighter14,
+  Panda: fighter15,
+  Paul: fighter16,
+  Xiaoyu: fighter17,
+  Yoshimitsu: fighter18,
 };
 
 // FUNCIONES
 
 let RellenarStats = (fighter) => {
-    console.log(fighter);
-    document.getElementById("fighterSelP1").innerHTML = ` <img class="fighterFocus" src="img/personajes/${fighter.nombre}.png"></img> `;
-    document.getElementById("nacionalidad").innerHTML = ` <img src="img/banderas/${fighter.nacionalidad}.png"></img> `;
-    document.getElementById("fighter1name").innerHTML = ` <p>${fighter.nombre}</p> `;
-    document.getElementById("hp").innerHTML = ` <p>HP: ${fighter.hp}</p> `;
-    document.getElementById("str").innerHTML = ` <p>STR: ${fighter.str}</p> `;
-    document.getElementById("def").innerHTML = ` <p>DEF: ${fighter.def}</p> `;
-    document.getElementById("luck").innerHTML = ` <p>LUCK: ${fighter.suerte}</p> `;
- }
-
-/* let pintaInfo = document.getElementById("Anna");
-pintaInfo.addEventListener("mouseover", RellenarStats(fighter0));
-
-let pintaInfo = document.getElementById("Bryan");
-pintaInfo.addEventListener("mouseover", RellenarStats(fighter0)); */
+  document.getElementById(
+    "fighterSelP1"
+  ).innerHTML = ` <img class="fighterFocus" src="img/personajes/${fighter.nombre}.png"></img> `;
+  document.getElementById(
+    "nacionalidad"
+  ).innerHTML = ` <img class="nacionalidadFocus" src="img/banderas/${fighter.nacionalidad}.png"></img> `;
+  document.getElementById(
+    "fighter1name"
+  ).innerHTML = ` <p>${fighter.nombre}</p> `;
+  document.getElementById("hp").innerHTML = ` <p>HP: ${fighter.hp}</p> `;
+  document.getElementById("str").innerHTML = ` <p>STR: ${fighter.str}</p> `;
+  document.getElementById("def").innerHTML = ` <p>DEF: ${fighter.def}</p> `;
+  document.getElementById(
+    "luck"
+  ).innerHTML = ` <p>LUCK: ${fighter.suerte}</p> `;
+};
 
 ataque = (enemigo) => {
-    enemigo.hp -= (this.str - (enemigo.def/100 + enemigo.def));
-}
+  enemigo.hp -= this.str - (enemigo.def / 100 + enemigo.def);
+};
 
-let startGame = () =>{
-    p1 = "";
-    p2= "";
-}
+critico = (enemigo) => {
+  enemigo.hp -= (this.str - (enemigo.def / 100 + enemigo.def)) * 2;
+};
+
+let startGame = () => {
+  p1 = "";
+  p2 = "";
+};
 
 let cambiaPantalla = (faseAhora, faseFutura) => {
-    let pantallaActual = document.getElementById(faseAhora);
-    let pantallaDestino = document.getElementById(faseFutura);
+  let pantallaActual = document.getElementById(faseAhora);
+  let pantallaDestino = document.getElementById(faseFutura);
 
-    pantallaActual.style.display = "none";
-    pantallaDestino.style.display = "block";
-}
-
+  pantallaActual.style.display = "none";
+  pantallaDestino.style.display = "block";
+};
 
 let selectFighter = (personaje) => {
-    if(p1 == ""){
-        p1 = allplayers[personaje];
-
-        document.getElementById(personaje).className = "avatarSel";
-        document.getElementById(personaje).className = "marcoSel";
-        document.getElementById(personaje).onclick = "";
-    }else{
-        p2 = allplayers[personaje];
-        document.getElementById(personaje).className = "avatarSel";
-        document.getElementById(personaje).className = "marcoSel";
-        document.getElementById(personaje).onclick = "";
-    }
-}
+  if (p1 == "") {
+    p1 = allplayers[personaje];
+    console.log(p1);
+    document.getElementById(personaje).className = "avatarSel";
+    document.getElementById(personaje).className = "marcoSel";
+    document.getElementById(personaje).onclick = "";
+    document.getElementById(
+      "fighterSelP1"
+    ).innerHTML = ` <img class="fighterFocus" src="img/personajes/${p1.nombre}.png"></img> `;
+    document.getElementById(
+      "nacionalidad"
+    ).innerHTML = ` <img class="nacionalidadFocus" src="img/banderas/${p1.nacionalidad}.png"></img> `;
+    document.getElementById("fighter1name").innerHTML = ` <p>${p1.nombre}</p> `;
+    document.getElementById("hp").innerHTML = ` <p>HP: ${p1.hp}</p> `;
+    document.getElementById("str").innerHTML = ` <p>STR: ${p1.str}</p> `;
+    document.getElementById("def").innerHTML = ` <p>DEF: ${p1.def}</p> `;
+    document.getElementById("luck").innerHTML = ` <p>LUCK: ${p1.suerte}</p> `;
+  } else {
+    p2 = allplayers[personaje];
+    document.getElementById(personaje).className = "avatarSel";
+    document.getElementById(personaje).className = "marcoSel";
+    document.getElementById(personaje).onclick = "";
+  }
+};
