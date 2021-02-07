@@ -23,20 +23,20 @@ class Fighter {
 }
 
 // INSTANCIAS Y VARIABLES GLOBALES
-let fighter0 = new Fighter("Anna", "Irlanda", 600, 50, 45, 20);
-let fighter1 = new Fighter("Bryan", "EEUU", 550, 65, 50, 18);
+let fighter0 = new Fighter("Anna", "Irlanda", 600, 60, 45, 20);
+let fighter1 = new Fighter("Bryan", "EEUU", 550, 70, 55, 18);
 let fighter2 = new Fighter("Eddy", "Brazil", 650, 65, 55, 23);
-let fighter3 = new Fighter("Heihachi", "Japon", 700, 75, 50, 21);
-let fighter4 = new Fighter("Hwoarang", "KoreaDelSur", 650, 80, 60, 35);
+let fighter3 = new Fighter("Heihachi", "Japon", 700, 70, 40, 21);
+let fighter4 = new Fighter("Hwoarang", "KoreaDelSur", 650, 80, 50, 35);
 let fighter5 = new Fighter("Jack", "Rusia", 800, 30, 80, 33);
 let fighter6 = new Fighter("Jin", "Japon", 700, 80, 50, 30);
-let fighter7 = new Fighter("Julia", "EEUU", 650, 45, 50, 23);
+let fighter7 = new Fighter("Julia", "EEUU", 650, 55, 50, 23);
 let fighter8 = new Fighter("King", "Mexico", 700, 75, 40, 25);
 let fighter9 = new Fighter("Kuma", "Japon", 800, 35, 85, 35);
 let fighter10 = new Fighter("Law", "EEUU", 600, 70, 55, 22);
 let fighter11 = new Fighter("Lei", "China", 600, 70, 55, 22);
 let fighter12 = new Fighter("Mokujin", "Japon", 1000, 10, 100, 75);
-let fighter13 = new Fighter("Nina", "Irlanda", 550, 55, 50, 20);
+let fighter13 = new Fighter("Nina", "Irlanda", 550, 65, 55, 27);
 let fighter14 = new Fighter("Ogre", "Mexico", 750, 70, 60, 23);
 let fighter15 = new Fighter("Panda", "China", 800, 35, 85, 35);
 let fighter16 = new Fighter("Paul", "EEUU", 700, 80, 50, 27);

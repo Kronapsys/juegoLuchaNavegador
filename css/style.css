@@ -30,7 +30,7 @@ body {
 }
 
 #log {
-  height: 28rem;
+  max-height: 28rem;
   width: 35rem;
   text-align: center;
   position: fixed;
