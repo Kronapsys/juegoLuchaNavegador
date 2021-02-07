@@ -8,28 +8,36 @@ class Fighter {
     this.def = def;
     this.suerte = suerte;
   }
+
+  ataque(enemigo) {
+    enemigo.hp -= this.str - (enemigo.def / (100 + enemigo.def)) * 100;
+  }
+
+  critico(enemigo) {
+    enemigo.hp -= (this.str - (enemigo.def / (100 + enemigo.def)) * 100) * 2;
+  }
 }
 
 // INSTANCIAS Y VARIABLES GLOBALES
-let fighter0 = new Fighter("Anna", "Irlanda", 600, 50, 45, 2);
-let fighter1 = new Fighter("Bryan", "EEUU", 550, 65, 50, 2);
-let fighter2 = new Fighter("Eddy", "Brazil", 650, 65, 55, 4);
-let fighter3 = new Fighter("Heihachi", "Japon", 700, 75, 50, 2);
-let fighter4 = new Fighter("Hwoarang", "KoreaDelSur", 650, 80, 60, 3);
-let fighter5 = new Fighter("Jack", "Rusia", 800, 30, 80, 2);
-let fighter6 = new Fighter("Jin", "Japon", 700, 80, 50, 3);
-let fighter7 = new Fighter("Julia", "EEUU", 650, 45, 50, 2);
-let fighter8 = new Fighter("King", "Mexico", 700, 75, 40, 2);
-let fighter9 = new Fighter("Kuma", "Japon", 800, 30, 85, 3);
-let fighter10 = new Fighter("Law", "EEUU", 600, 70, 55, 2);
-let fighter11 = new Fighter("Lei", "China", 600, 70, 55, 2);
-let fighter12 = new Fighter("Mokujin", "Japon", 1000, 10, 100, 5);
-let fighter13 = new Fighter("Nina", "Irlanda", 550, 55, 50, 2);
-let fighter14 = new Fighter("Ogre", "Mexico", 750, 70, 60, 2);
-let fighter15 = new Fighter("Panda", "China", 800, 30, 85, 3);
-let fighter16 = new Fighter("Paul", "EEUU", 700, 80, 50, 3);
-let fighter17 = new Fighter("Xiaoyu", "China", 550, 60, 60, 2);
-let fighter18 = new Fighter("Yoshimitsu", "Desconocido", 900, 40, 25, 8);
+let fighter0 = new Fighter("Anna", "Irlanda", 600, 50, 45, 20);
+let fighter1 = new Fighter("Bryan", "EEUU", 550, 65, 50, 18);
+let fighter2 = new Fighter("Eddy", "Brazil", 650, 65, 55, 23);
+let fighter3 = new Fighter("Heihachi", "Japon", 700, 75, 50, 21);
+let fighter4 = new Fighter("Hwoarang", "KoreaDelSur", 650, 80, 60, 35);
+let fighter5 = new Fighter("Jack", "Rusia", 800, 30, 80, 33);
+let fighter6 = new Fighter("Jin", "Japon", 700, 80, 50, 30);
+let fighter7 = new Fighter("Julia", "EEUU", 650, 45, 50, 23);
+let fighter8 = new Fighter("King", "Mexico", 700, 75, 40, 25);
+let fighter9 = new Fighter("Kuma", "Japon", 800, 35, 85, 35);
+let fighter10 = new Fighter("Law", "EEUU", 600, 70, 55, 22);
+let fighter11 = new Fighter("Lei", "China", 600, 70, 55, 22);
+let fighter12 = new Fighter("Mokujin", "Japon", 1000, 10, 100, 75);
+let fighter13 = new Fighter("Nina", "Irlanda", 550, 55, 50, 20);
+let fighter14 = new Fighter("Ogre", "Mexico", 750, 70, 60, 23);
+let fighter15 = new Fighter("Panda", "China", 800, 35, 85, 35);
+let fighter16 = new Fighter("Paul", "EEUU", 700, 80, 50, 27);
+let fighter17 = new Fighter("Xiaoyu", "China", 550, 60, 60, 23);
+let fighter18 = new Fighter("Yoshimitsu", "Desconocido", 900, 40, 25, 85);
 
 let allFighter = [
   "Anna",
@@ -99,14 +107,6 @@ let RellenarStats = (fighter) => {
   ).innerHTML = ` <p>LUCK: ${fighter.suerte}</p> `;
 };
 
-ataque = (enemigo) => {
-  enemigo.hp -= this.str - ((enemigo.def / (100 + enemigo.def))*100);
-};
-
-critico = (enemigo) => {
-    enemigo.hp -= (this.str - ((enemigo.def / (100 + enemigo.def))*100)) * 2;
-};
-
 let startGame = () => {
   p1 = "";
   p2 = "";
@@ -123,7 +123,7 @@ let cambiaPantalla = (faseAhora, faseFutura) => {
 let selectFighter = (personaje) => {
   if (p1 == "") {
     p1 = allplayers[personaje];
-    console.log(p1);
+
     document.getElementById(personaje).className = "avatarSel";
     document.getElementById(personaje).className = "marcoSel";
     document.getElementById(personaje).onclick = "";
@@ -143,5 +143,58 @@ let selectFighter = (personaje) => {
     document.getElementById(personaje).className = "avatarSel";
     document.getElementById(personaje).className = "marcoSel";
     document.getElementById(personaje).onclick = "";
+    document.getElementById(
+      "fighterSelP2"
+    ).innerHTML = ` <img class="fighterFocus" src="img/personajes/${p2.nombre}.png"></img> `;
+    document.getElementById(
+      "nacionalidad"
+    ).innerHTML = ` <img class="nacionalidadFocus" src="img/banderas/${p2.nacionalidad}.png"></img> `;
+    document.getElementById("fighter2name").innerHTML = ` <p>${p2.nombre}</p> `;
+    document.getElementById("hp").innerHTML = ` <p>HP: ${p2.hp}</p> `;
+    document.getElementById("str").innerHTML = ` <p>STR: ${p2.str}</p> `;
+    document.getElementById("def").innerHTML = ` <p>DEF: ${p2.def}</p> `;
+    document.getElementById("luck").innerHTML = ` <p>LUCK: ${p2.suerte}</p> `;
+
+    //Cargo los personajes en la siguiente pantalla
+
+    let showPlayer1 = document.getElementById("fighterSelP1");
+    let showPlayer2 = document.getElementById("fighterSelP2");
+
+    showPlayer1.innerHTML = ` <img class="fighterFocus" src="img/personajes/${p1.nombre}.png"></img> `;
+    showPlayer2.innerHTML = ` <img class="fighterFocus" src="img/personajes/${p2.nombre}.png"></img> `;
+
+    resolveIn(1000).then((delay) => {
+      cambiaPantalla("pantallaSeleccionPersonaje", "pantallaLucha");
+    });
   }
 };
+
+let combate = () => {
+  do {
+    let turno = Math.floor(Math.random() * 2);
+    let gCrit = Math.floor(Math.random() * 100);
+
+    if (turno == 0) {
+      if (gCrit <= p1.suerte) {
+        console.log("Golpe critico !");
+        p1.critico(p2);
+      } else {
+        p1.ataque(p2);
+      }
+    } else {
+      if (gCrit <= p2.suerte) {
+        console.log("Golpe critico !");
+        p2.critico(p1);
+      } else {
+        p2.ataque(p1);
+      }
+    }
+    console.log(p1.nombre," ", p1.hp);
+    console.log(p2.nombre," ", p2.hp);
+  } while (p1.hp >= 0 || p2.hp >= 0);
+};
+
+// Funcion de delay
+
+const resolveIn = (delay) =>
+  new Promise((res) => setTimeout(() => res(delay), delay));
