@@ -1,270 +1,287 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Play:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jomhuria&family=Play:wght@700&display=swap");
 
-.a{
-    border: solid 0.1em red;
+.a {
+  border: solid 0.1em red;
 }
 
-body{
-    margin: 0;
-    padding: 0;
-} 
-
-
-#pantallaSeleccionPersonaje{
-    height: 100vh;
-    width: 100%;
-    background-image: url(../img/fondo.gif);
-    display: flex;
-    flex-direction: column;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-#pantallaLucha{
-    height: 100vh;
-    width: 100%;
-    background-image: url(../img/fondo.gif);
-    display: flex;
-    flex-direction: column;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;  
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-.playerStatus{
-    height: 2em;
-    width: 25em;
-    font-family: 'Permanent Marker', cursive;
-    color: white;
-    font-size: 1.5em;
-    margin-left: 15em;
-    text-align: center;
-    margin-top: -1em;
+::-webkit-scrollbar-thumb {
+  width: 3px;
 }
 
-.caja1{
-    height: 1em;
+#pantallaSeleccionPersonaje {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../img/fondo.gif);
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.personajesJugables{
-    height: 15em;
-    width: 38em;
-    display: flex;
-    flex-direction: column;
-    margin-left: 24em;
+#log {
+  height: 28rem;
+  width: 35rem;
+  text-align: center;
+  position: fixed;
+  overflow-y: auto;
+  visibility: hidden;
+  color: white;
+  font-family: "Play", sans-serif;
 }
 
-.fila{
-    height: 4em;
-    width: 37em;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 0.5em;
+#result {
+  text-align: center;
+  position: fixed;
+  color: white;
+  font-family: "Play", sans-serif;
 }
 
-.fila2{
-    margin-left: 2em;
-    width: 32em;
+#pantallaLucha {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../img/fondo.gif);
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.fila3{
-    margin-left: 9em;
-    width: 22em;
+.playerStatus {
+  height: 2em;
+  width: 25em;
+  font-family: "Permanent Marker", cursive;
+  color: white;
+  font-size: 1.5em;
+  margin-left: 15em;
+  text-align: center;
+  margin-top: -1em;
 }
 
-.marco{
-    height: 4em;
-    width: 4em;
-    margin-left: 0.1em;
-    border: solid 0.2em orange;
+.caja1 {
+  height: 1em;
 }
 
-.marcoSel{
-    height: 4em;
-    width: 4em;
-    margin-left: 0.1em;
-    border: solid 0.2em orange;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+.personajesJugables {
+  height: 15em;
+  width: 38em;
+  display: flex;
+  flex-direction: column;
+  margin-left: 24em;
 }
 
-.avatar{
-    height: 4em;
-    width: 4em;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.fila {
+  height: 4em;
+  width: 37em;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5em;
 }
 
-.avatarSel{
-    height: 4em;
-    width: 4em;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+.fila2 {
+  margin-left: 2em;
+  width: 32em;
 }
 
-.fighterSelP1{
-    width: 15em;
-    height: 30em;
-    margin-left: 3em;
-    margin-top: -15em;
-    border: solid 0.4em blue;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
+.fila3 {
+  margin-left: 9em;
+  width: 22em;
 }
 
-.fighterFocus{
-    width: 15em;
-    height: 30em;
+.marco {
+  height: 4em;
+  width: 4em;
+  margin-left: 0.1em;
+  border: solid 0.2em orange;
 }
 
-.nacionalidadFocus{
-    width: 3em;
-    height: 3em;
+.marcoSel {
+  height: 4em;
+  width: 4em;
+  margin-left: 0.1em;
+  border: solid 0.2em orange;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
-.statsFighterP1{
-    height: 12em;
-    width: 10em;
-    margin-top: 16em;
-    margin-left: 16em;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    font-family: 'Play', sans-serif;
-    z-index: 2;
-    position: fixed;
-    
+.avatar {
+  height: 4em;
+  width: 4em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.nacionalidad{
-    height: 2em;
-    width: 3em;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.avatarSel {
+  height: 4em;
+  width: 4em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
-.stats{
-    height: 2em;
-    width: 5em;
+.fighterSelP1 {
+  width: 15em;
+  height: 30em;
+  margin-left: 3em;
+  margin-top: -15em;
+  border: solid 0.4em blue;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
 }
 
-.fighterSelP2{
-    width: 15em;
-    height: 30em;
-    margin-left: 65em;
-    margin-top: -31em;
-    border: solid 0.4em red;
-    background-image: url(../img/personajes);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 2;
-    position: fixed;
+.fighterSelP2 {
+  width: 15em;
+  height: 30em;
+  margin-left: 65em;
+  margin-top: -31em;
+  border: solid 0.4em red;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
 }
 
-.statsFighterP2{
-    height: 12em;
-    width: 10em;
-    margin-top: 16em;
-    margin-left: -12em;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    font-family: 'Play', sans-serif;
+.fighterFocus {
+  width: 15em;
+  height: 30em;
 }
 
-.fighter1name{
-    height: 2em;
-    width: 10em;
-    font-family: 'Permanent Marker', cursive;
-    color: white;
-    font-size: 1.5em;
-    text-align: center;
-    margin-top: -0.3em;
-    margin-left: 2.3em;
+.nacionalidadFocus {
+  width: 3em;
+  height: 3em;
 }
 
-.fighter2name{
-    height: 2em;
-    width: 10em;
-    font-family: 'Permanent Marker', cursive;
-    color: white;
-    font-size: 1.5em;
-    text-align: center;
-    margin-top: -2em;
-    margin-left: 43.5em;
+.statsFighterP1 {
+  height: 12em;
+  width: 10em;
+  margin-top: 16em;
+  margin-left: 16em;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: "Play", sans-serif;
+  position: fixed;
 }
 
-.infoTeams{
-    height: 16em;
-    width: 20em;
-    margin-left: 32em;
-    margin-top: -19em;
-    display: flex;
-    flex-direction: column;
+.statsFighterP2 {
+  height: 12em;
+  width: 10em;
+  margin-top: 16em;
+  margin-left: -5em;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: "Play", sans-serif;
+  position: fixed;
 }
 
-.teamName{
-    font-family: 'Permanent Marker', cursive;
-    color: white;
+.nacionalidad {
+  height: 2em;
+  width: 3em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.infoTeamP1{
-    height: 8em;
-    width: 20em;
-    display: flex;
-    flex-direction: column;
+.stats {
+  height: 2em;
+  width: 5em;
 }
 
-.teamP1{
-    display: flex;
-    flex-direction: row;
-    margin-top: -1em;
+.fighter1name {
+  height: 2em;
+  width: 10em;
+  font-family: "Permanent Marker", cursive;
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: -0.3em;
+  margin-left: 2.3em;
 }
 
-.infoTeamP2{
-    height: 8em;
-    width: 20em;
-    display: flex;
-    flex-direction: column;
+.fighter2name {
+  height: 2em;
+  width: 10em;
+  font-family: "Permanent Marker", cursive;
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: -3em;
+  margin-left: 43.5em;
 }
 
-.teamNameP2{
-    text-align: right;
-    margin-top: -1.5em;
+.infoTeams {
+  height: 16em;
+  width: 20em;
+  margin-left: 32em;
+  margin-top: -19em;
+  display: flex;
+  flex-direction: column;
 }
 
-.teamP2{
-    display: flex;
-    flex-direction: row;
-    margin-left: 6.2em;
-    margin-top: -1em;
+.teamName {
+  font-family: "Permanent Marker", cursive;
+  color: white;
 }
 
-.btnFight{
-    height: 3.5em;
-    width: 8em;
-    margin-left: 37em;
-    margin-top: -4em;
-    font-family: 'Permanent Marker', cursive;
-    color: white;
-    text-align: center;
-    border-radius: 10%;
-    border: solid 0.2em orange;
+.infoTeamP1 {
+  height: 8em;
+  width: 20em;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Haciendo hover en div1 aparece div2 
-.marco0:hover + .fighterSelP1, .statsFighterP1 {
-    display: block;
-} */
+.teamP1 {
+  display: flex;
+  flex-direction: row;
+  margin-top: -1em;
+}
+
+.infoTeamP2 {
+  height: 8em;
+  width: 20em;
+  display: flex;
+  flex-direction: column;
+}
+
+.teamNameP2 {
+  text-align: right;
+  margin-top: -1.5em;
+}
+
+.teamP2 {
+  display: flex;
+  flex-direction: row;
+  margin-left: 6.2em;
+  margin-top: -1em;
+}
+
+.btnFight {
+  height: 3.5em;
+  width: 8em;
+  margin-left: 37em;
+  margin-top: -6em;
+  font-family: "Permanent Marker", cursive;
+  color: white;
+  text-align: center;
+  border-radius: 10%;
+  border: solid 0.3em orange;
+}

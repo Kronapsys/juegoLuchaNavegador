@@ -10,11 +10,15 @@ class Fighter {
   }
 
   ataque(enemigo) {
-    enemigo.hp -= this.str - (enemigo.def / (100 + enemigo.def)) * 100;
+    enemigo.hp -= Math.round(
+      this.str - (enemigo.def / (100 + enemigo.def)) * 100
+    );
   }
 
   critico(enemigo) {
-    enemigo.hp -= (this.str - (enemigo.def / (100 + enemigo.def)) * 100) * 2;
+    enemigo.hp -= Math.round(
+      (this.str - (enemigo.def / (100 + enemigo.def)) * 100) * 2
+    );
   }
 }
 
@@ -90,21 +94,39 @@ let allplayers = {
 // FUNCIONES
 
 let RellenarStats = (fighter) => {
-  document.getElementById(
-    "fighterSelP1"
-  ).innerHTML = ` <img class="fighterFocus" src="img/personajes/${fighter.nombre}.png"></img> `;
-  document.getElementById(
-    "nacionalidad"
-  ).innerHTML = ` <img class="nacionalidadFocus" src="img/banderas/${fighter.nacionalidad}.png"></img> `;
-  document.getElementById(
-    "fighter1name"
-  ).innerHTML = ` <p>${fighter.nombre}</p> `;
-  document.getElementById("hp").innerHTML = ` <p>HP: ${fighter.hp}</p> `;
-  document.getElementById("str").innerHTML = ` <p>STR: ${fighter.str}</p> `;
-  document.getElementById("def").innerHTML = ` <p>DEF: ${fighter.def}</p> `;
-  document.getElementById(
-    "luck"
-  ).innerHTML = ` <p>LUCK: ${fighter.suerte}</p> `;
+  if (p1 == "") {
+    document.getElementById(
+      "fighterSelP1"
+    ).innerHTML = ` <img class="fighterFocus" src="img/personajes/${fighter.nombre}.png"></img> `;
+    document.getElementById(
+      "nacionalidad"
+    ).innerHTML = ` <img class="nacionalidadFocus" src="img/banderas/${fighter.nacionalidad}.png"></img> `;
+    document.getElementById(
+      "fighter1name"
+    ).innerHTML = ` <p>${fighter.nombre}</p> `;
+    document.getElementById("hp").innerHTML = ` <p>HP: ${fighter.hp}</p> `;
+    document.getElementById("str").innerHTML = ` <p>STR: ${fighter.str}</p> `;
+    document.getElementById("def").innerHTML = ` <p>DEF: ${fighter.def}</p> `;
+    document.getElementById(
+      "luck"
+    ).innerHTML = ` <p>LUCK: ${fighter.suerte}</p> `;
+  } else {
+    document.getElementById(
+      "fighterSelP2"
+    ).innerHTML = ` <img class="fighterFocus" src="img/personajes/${fighter.nombre}.png"></img> `;
+    document.getElementById(
+      "nacionalidad2"
+    ).innerHTML = ` <img class="nacionalidadFocus" src="img/banderas/${fighter.nacionalidad}.png"></img> `;
+    document.getElementById(
+      "fighter2name"
+    ).innerHTML = ` <p>${fighter.nombre}</p> `;
+    document.getElementById("hp2").innerHTML = ` <p>HP: ${fighter.hp}</p> `;
+    document.getElementById("str2").innerHTML = ` <p>STR: ${fighter.str}</p> `;
+    document.getElementById("def2").innerHTML = ` <p>DEF: ${fighter.def}</p> `;
+    document.getElementById(
+      "luck2"
+    ).innerHTML = ` <p>LUCK: ${fighter.suerte}</p> `;
+  }
 };
 
 let startGame = () => {
@@ -112,12 +134,11 @@ let startGame = () => {
   p2 = "";
 };
 
-let cambiaPantalla = (faseAhora, faseFutura) => {
-  let pantallaActual = document.getElementById(faseAhora);
-  let pantallaDestino = document.getElementById(faseFutura);
-
-  pantallaActual.style.display = "none";
-  pantallaDestino.style.display = "block";
+let cambiaPantalla = () => {
+  document.getElementById("fila1").style.visibility = "hidden";
+  document.getElementById("fila2").style.visibility = "hidden";
+  document.getElementById("fila3").style.visibility = "hidden";
+  document.getElementById("playerStatus").style.visibility = "hidden";
 };
 
 let selectFighter = (personaje) => {
@@ -147,29 +168,24 @@ let selectFighter = (personaje) => {
       "fighterSelP2"
     ).innerHTML = ` <img class="fighterFocus" src="img/personajes/${p2.nombre}.png"></img> `;
     document.getElementById(
-      "nacionalidad"
+      "nacionalidad2"
     ).innerHTML = ` <img class="nacionalidadFocus" src="img/banderas/${p2.nacionalidad}.png"></img> `;
     document.getElementById("fighter2name").innerHTML = ` <p>${p2.nombre}</p> `;
-    document.getElementById("hp").innerHTML = ` <p>HP: ${p2.hp}</p> `;
-    document.getElementById("str").innerHTML = ` <p>STR: ${p2.str}</p> `;
-    document.getElementById("def").innerHTML = ` <p>DEF: ${p2.def}</p> `;
-    document.getElementById("luck").innerHTML = ` <p>LUCK: ${p2.suerte}</p> `;
+    document.getElementById("hp2").innerHTML = ` <p>HP: ${p2.hp}</p> `;
+    document.getElementById("str2").innerHTML = ` <p>STR: ${p2.str}</p> `;
+    document.getElementById("def2").innerHTML = ` <p>DEF: ${p2.def}</p> `;
+    document.getElementById("luck2").innerHTML = ` <p>LUCK: ${p2.suerte}</p> `;
 
-    //Cargo los personajes en la siguiente pantalla
-
-    let showPlayer1 = document.getElementById("fighterSelP1");
-    let showPlayer2 = document.getElementById("fighterSelP2");
-
-    showPlayer1.innerHTML = ` <img class="fighterFocus" src="img/personajes/${p1.nombre}.png"></img> `;
-    showPlayer2.innerHTML = ` <img class="fighterFocus" src="img/personajes/${p2.nombre}.png"></img> `;
-
-    resolveIn(1000).then((delay) => {
-      cambiaPantalla("pantallaSeleccionPersonaje", "pantallaLucha");
+    resolveIn(0).then((delay) => {
+      cambiaPantalla();
+      combate();
     });
   }
 };
 
 let combate = () => {
+  let log = [];
+  document.getElementById("log").style.visibility = "visible";
   do {
     let turno = Math.floor(Math.random() * 2);
     let gCrit = Math.floor(Math.random() * 100);
@@ -189,9 +205,24 @@ let combate = () => {
         p2.ataque(p1);
       }
     }
-    console.log(p1.nombre," ", p1.hp);
-    console.log(p2.nombre," ", p2.hp);
-  } while (p1.hp >= 0 || p2.hp >= 0);
+
+    log.push(` <p>${p1.nombre} ${p1.hp} / ${p2.nombre} ${p2.hp}</p> `);
+
+    document.getElementById("log").innerHTML = ` <p>${log}</p> `;
+
+    if (p1.hp <= 0) {
+      document.getElementById("result").style.visibility = "visible";
+      document.getElementById(
+        "result"
+      ).innerHTML = ` <p>${p2.nombre} WINS !</p> `;
+    }
+    if (p2.hp <= 0) {
+      document.getElementById("result").style.visibility = "visible";
+      document.getElementById(
+        "result"
+      ).innerHTML = ` <p>${p1.nombre} WINS</p> `;
+    }
+  } while (p1.hp > 0 && p2.hp > 0);
 };
 
 // Funcion de delay
