@@ -41,7 +41,7 @@ let fighter14 = new Fighter("Ogre", "Mexico", 750, 70, 60, 23);
 let fighter15 = new Fighter("Panda", "China", 800, 35, 85, 35);
 let fighter16 = new Fighter("Paul", "EEUU", 700, 80, 50, 27);
 let fighter17 = new Fighter("Xiaoyu", "China", 550, 60, 60, 23);
-let fighter18 = new Fighter("Yoshimitsu", "Desconocido", 900, 40, 25, 85);
+let fighter18 = new Fighter("Yoshimitsu", "Desconocido", 950, 40, 40, 85);
 
 let allFighter = [
   "Anna",
