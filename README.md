@@ -16,4 +16,4 @@
 -   JS
     
 # Git Pages 🚀
-    Puedes probar el juego desde aquí: 👀 https://kronapsys.github.io/juegoLuchaNavegador/
+    Puedes probar el juego desde aquí: 👀 https://kronapsys.github.io/juegoLuchaNavegador/"
